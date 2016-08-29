@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0"/>
+	<style type="text/css">
+		#bottleBox{
+			position: relative;
+			width: 100%;
+		}
+		#bottleL{
+			position: relative;
+			left: 0;
+			top: 0;
+			width: 30%;
+			height: auto;
+			/*防止子元素的margin坍塌顶出去*/
+			border: 1px solid transparent;
+		}
+		#bottleR{
+			position: absolute;
+			left: 50%;
+			top: 0;
+			width: 30%;
+			height: auto;
+		}
+		.bottleL,.bottleR{
+			position: relative;
+			height: 50px;
+			padding: 5px;
+			border: 5px solid #E7A6A6;
+			width: 100%;
+			margin: 10px;
+			transition: top 0.5s;
+			overflow: hidden;
+		}
+		.boxone{
+			background-color: #EB6363;
+		}
+		.boxtwo{
+			background-color: #EE18CE;
+		}
+
+		/*非插件样式表*/
+		.menuBox{
+			width: 100%;
+			height: 3rem;
+		}
+		.menuLeft,.menuRight{
+			width: 45%;
+			display: inline-block;
+			text-align: center;
+			line-height: 3rem;
+			font-weight: 800;
+		}
+
+	</style>
+</head>
+<body>
+
+<header>
+	左右拖拽编排您喜欢的队列【移动端或chrome手机模式打开】
+</header>
+<div class="menuBox">
+	<div class="menuLeft">这个</div>
+	<div class="menuRight">那个</div>
+</div>
+<!-- 数据监控 -->
+<div id="num">00000</div>
+<div id="num1">00000</div>
+<div id="num2">00000</div>
+<div id="num3">00000</div>
+<!-- 组件骨架 起始处 -->
+<!--前提
+margin+padding+border的top和bottom必须一样
+每个子div的高度必须一样
+每个bottleL\bottleR的class是必须的
+-->
+<div id="bottleBox">
+	<div id="bottleL">
+		<div class="bottleL boxone" flag="1"><div class="aa">11</div></div>
+		<div class="bottleL boxtwo" flag="2">22</div>
+		<div class="bottleL boxone" flag="3">33</div>
+		<div class="bottleL boxtwo" flag="4">44</div>
+		<div class="bottleL boxone" flag="5">55</div>
+		<div class="bottleL boxtwo" flag="6">66</div>
+	</div>
+
+	<div id="bottleR">
+		<div class="bottleR boxone" flag="1">1</div>
+		<div class="bottleR boxtwo" flag="2">2</div>
+		<div class="bottleR boxone" flag="3">3</div>
+		<div class="bottleR boxtwo" flag="4">4</div>
+		<div class="bottleR boxone" flag="5">5</div>
+	</div>
+</div>
+<!-- 组件骨架 结束处 -->
+<p>留意底部</p>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="bottlemove.js"></script>
+<script type="text/javascript">
+	$('#bottleL').bottle({'class':'bottleL'});
+	$('#bottleR').bottle({'class':'bottleR'});
+</script>
+
+</body>
+</html>
