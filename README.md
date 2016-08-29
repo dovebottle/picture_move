@@ -1,6 +1,6 @@
 # picture_move 图片的移动与排序插件
 
-![Alt text](http://www.doverr.com/blog/wp-content/uploads/2016/08/demo.jpg)
+![Alt text](http://www.doverr.com/blog/wp-content/uploads/2016/08/demo.jpg =260x280)
 
 ###使用方法
 $('#bottleL').bottle({'class':'bottleL'});
